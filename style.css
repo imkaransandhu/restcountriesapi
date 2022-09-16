@@ -43,7 +43,8 @@ body {
   font-weight: 300;
 }
 
-header {
+header,
+.filter {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,14 +52,48 @@ header {
   background-color: var(--Dark-Mode-Elements);
 }
 
+.filter {
+  background-color: var(--Dark-Mode-Background);
+  padding-top: 3.5rem;
+}
+
 .all-countries {
   background-color: var(--Dark-Mode-Background);
-  padding: 2rem 3%;
+  padding: 0 3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   flex-basis: auto;
+  min-height: 100vh;
+}
+
+.search-filter,
+.region-filter {
+  flex: 1;
+  display: flex;
+}
+
+.region-filter {
+  justify-content: flex-end;
+}
+
+#search-country,
+#regions {
+  height: 4rem;
+  background-color: var(--Dark-Mode-Elements);
+  border: none;
+  border-radius: 0.375rem;
+  color: var(--Dark-Mode-Text-and-Light-Mode-Elements);
+  padding: 0 2rem;
+}
+
+#search-country {
+  width: 30%;
+}
+
+#regions {
+  width: 40%;
 }
 
 .country {
@@ -77,8 +112,8 @@ header {
 .country-image {
   height: 100%;
   width: 100%;
-  border-top-left-radius: .375rem;
-  border-top-right-radius: .375rem;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
 }
 
 .country-section {
@@ -129,19 +164,17 @@ header {
     font-size: 11px;
   }
 
-
-}
-
-@media screen and (max-width: 425px) {
-  html {
-    font-size: 10px;
-  }
-
   .all-countries {
     justify-content: center;
   }
 
   .country {
     min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 10px;
   }
 }
